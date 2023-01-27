@@ -20,7 +20,7 @@ function printPyramid(height) {
   let space = " ";
   let brick = "#";
   let string = "";
-  let layer = space+space+brick+brick;
+  
   for(let i = 1; i <= height; i++){
     
     for(x = 0; x < height-i; x++){
