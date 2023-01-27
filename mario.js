@@ -35,6 +35,6 @@ function printPyramid(height) {
   }
   // TODO #1
   // print that pyramid!
-console.log(string);
+  console.log(string);
 
 }
