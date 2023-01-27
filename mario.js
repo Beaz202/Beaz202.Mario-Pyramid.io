@@ -2,6 +2,21 @@
 printPyramid(5);
 // TODO #1
 // Take in user input for the height]
+let height = prompt("Enter the Height: ");
+let space = " ";
+let brick = "#";
+let layer = space+space+brick+brick;
+
+for(let i = 1; i<=height; i++){
+  for(let x = 0; x<height-1; x++){
+    space += " ";
+  }
+  for(let s = 0; s < i; s++){ 
+    space += '*';
+  }
+  space += "/n";
+}
+console.log(space);
 
 
 
