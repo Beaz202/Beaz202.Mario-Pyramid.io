@@ -17,24 +17,28 @@ printPyramid(parseInt(height));
 function printPyramid(height) {
   console.log("Uh oh... the pyramid is under construction.");
   console.log("Check back soon, our developers are hard at work as we speak!");
-  let space = " ";
+  let space = ".";
   let brick = "#";
   let string = "";
   
   for(let i = 1; i <= height; i++){
-    
+    let rowStr = string;
     for(x = 0; x < height-i; x++){
-    string += space;
+      rowStr += space;
     }
     
     for(let s = 0; s < i+1; s++){ 
-    string += brick;
+      rowStr += brick;
     }
     
-    string += "\n";
+    rowStr += "\n";
+    let newElement = document.createElement("p");
+    let node = document.createTextNode(rowStr);
+    newElement.appendChild(node);
+    let divPyramid = document.getElementById("pyramid");
+    divPyramid.appendChild(newElement);
   }
   // TODO #1
   // print that pyramid!
-  console.log(string);
 
 }
