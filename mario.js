@@ -15,11 +15,10 @@ printPyramid(parseInt(height));
  *      ######
  */
 function printPyramid(height) {
-  console.log("Uh oh... the pyramid is under construction.");
-  console.log("Check back soon, our developers are hard at work as we speak!");
   let space = ".";
   let brick = "#";
   let string = "";
+  console.clear();
   
   for(let i = 1; i <= height; i++){
     let rowStr = string;
@@ -37,8 +36,12 @@ function printPyramid(height) {
     newElement.appendChild(node);
     let divPyramid = document.getElementById("pyramid");
     divPyramid.appendChild(newElement);
-  }
-  // TODO #1
-  // print that pyramid!
 
+  }
+
+}
+function determineHeightAndThenDrawPyramid(){
+  var newHeight = document.getElementById("height").value;
+  document.getElementById("pyramid").innerHTML = newHeight;
+  printPyramid(newHeight);
 }
