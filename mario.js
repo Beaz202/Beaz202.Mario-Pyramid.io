@@ -1,24 +1,15 @@
+var height = document.getElementById('slider');
+var pyramid = document.getElementById('pyramid');
 
-// TODO #1
-// Take in user input for the height]
-let height = prompt("Enter the Height: ");
-printPyramid(parseInt(height));
-/*
- * printPyramid
- *
- * Prints to the console a pyramid of '#' characters of the specified height
- * For example, if height is 5, the console will look like this:
- *          ##
- *         ###
- *        ####
- *       #####
- *      ######
- */
+
+document.addEventListener('mousemove', pyramidSlider, false);
+
+
+
 function printPyramid(height) {
   let space = ".";
-  let brick = "#";
+  let brick = document.getElementById("symbols").value;
   let string = "";
-  console.clear();
   
   for(let i = 1; i <= height; i++){
     let rowStr = string;
@@ -40,8 +31,14 @@ function printPyramid(height) {
   }
 
 }
-function determineHeightAndThenDrawPyramid(){
-  var newHeight = document.getElementById("height").value;
-  document.getElementById("pyramid").innerHTML = newHeight;
+
+function pyramidSlider(){
+  document.addEventListener('change', symbolChange, false);
+  var newHeight = pyramid.innerHTML = slider.value;
   printPyramid(newHeight);
+}
+
+function symbolChange(brick){
+  brick = document.getElementById("symbols").value;
+  pyramid.innerHTML = brick;
 }

@@ -2,43 +2,68 @@
 <html>
 <head>
     <style>
-
+        body{
+          background-color: #e6e6e6;
+        }
         #pyramid {
             line-height: 0;
             font-size: 30px;
+            color: #e600e6;
         }
 
         body {
             font-family: "Courier New", monospace;
             text-align: center;
         }
+        h1{
+          background-color: #cc66ff;
+          margin-left: 50px;
+          margin-right: 50px;
+        }
+      
+        #slider{
+          
+        }
+        #mainSection{
+          border: 2px solid;
+          border-radius: 5px;
+          border-color: #cc66ff;
+        }
+        #selectionArea{
+          background-color: #d9d9d9;
+          padding-top: 30px;
+          padding-bottom: 30px;
+          font-weight: bold;
+          font-size: 20px;
+        }
+        
     </style>
 </head>
 <body >
-    <h1>Mario 3</h1>
+    <h1>Mario 3 <br> Pyramid Slider</h1>
 
     <br>
-
-    <p>When you say</p>
-
-    <p><strong>Draw a pyramid</strong></p>
-
-    <p>I say:</p>
-
-    <br>
-
-    <label>How high?</label>
-
-    <input type="text" id="height"/>
-
+  <div id = "mainSection">
+    <div id = "selectionArea">
+      <label for = "symbols">Brick Symbol</label>
+    
+      <select id = "symbols" onchange ="symbolChange()">
+        <option value = "#">#</option>
+        <option value = "@">@</option>
+        <option value = "X">X</option>
+        <option value = "$">$</option>
+      </select>
+      
+      <label for="slider">How high?</label>
+        
+      <input type = "range" id = "slider" min = "0" max = "20"/>
+    </div>
+    
     <br><br>
-
-    <button onclick = "determineHeightAndThenDrawPyramid()" >Draw a pyramid</button>
-
-    <br><br>
-
+    
     <div id="pyramid"></div>
 
     <script src="mario.js"></script>
+  </div>
 </body>
 </html>
